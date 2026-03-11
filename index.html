@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Selling Web Portal</title>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background: #f0f2f5; }
+    header { background: #1e90ff; color:white; padding:20px; text-align:center; }
+    header h1 { font-size:2rem; }
+    .container { width:90%; max-width:1000px; margin:20px auto; }
+    .video-card { background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); margin-bottom:20px; overflow:hidden; }
+    .video-card img { width:100%; }
+    .video-content { padding:15px; }
+    .video-content h2 { margin-bottom:10px; color:#333; }
+    .video-content p { margin-bottom:15px; color:#555; }
+    .buy-btn { background:#ff4500; color:white; padding:10px 15px; text-decoration:none; border-radius:5px; margin-right:10px; cursor:pointer; display:inline-block; }
+    .download-btn { background:#28a745; color:white; padding:10px 15px; text-decoration:none; border-radius:5px; display:none; }
+    footer { text-align:center; padding:15px; background:#1e90ff; color:white; margin-top:20px; }
+    @media(max-width:600px){
+        header h1 { font-size:1.5rem; }
+        .buy-btn, .download-btn { padding:8px 12px; font-size:0.9rem; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Video Selling Web Portal</h1>
+</header>
+
+<div class="container">
+    <!-- Video 1 -->
+    <div class="video-card">
+        <img src="https://via.placeholder.com/800x400.png?text=Video+1" alt="Video 1">
+        <div class="video-content">
+            <h2>Motivational Video 1</h2>
+            <p>Price: 100৳</p>
+            <button class="buy-btn" onclick="paymentConfirmed(this, 'https://drive.google.com/your-video-1-link')">Pay via Bkash</button>
+            <a href="#" class="download-btn" target="_blank">Download Video</a>
+        </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-card">
+        <img src="https://via.placeholder.com/800x400.png?text=Video+2" alt="Video 2">
+        <div class="video-content">
+            <h2>Motivational Video 2</h2>
+            <p>Price: 150৳</p>
+            <button class="buy-btn" onclick="paymentConfirmed(this, 'https://drive.google.com/your-video-2-link')">Pay via Bkash</button>
+            <a href="#" class="download-btn" target="_blank">Download Video</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Video Selling Web Portal | Developed by Jan
+</footer>
+
+<script>
+function paymentConfirmed(btn, downloadLink) {
+    // Simulate payment confirmation
+    alert("Payment received! Now you can download your video.");
+    const downloadBtn = btn.nextElementSibling;
+    downloadBtn.style.display = 'inline-block';
+    downloadBtn.href = downloadLink;
+    btn.style.display = 'none'; // Hide pay button after confirmation
+}
+</script>
+
+</body>
+</html>
